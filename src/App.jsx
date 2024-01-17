@@ -1,12 +1,19 @@
 import './styles/App.css'
 import { shuffle } from './utils/shuffle'
+import { cardData } from './cardData'
 
 function App() {
-    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    shuffle(cardData)
 
-    console.log(shuffle(array))
-
-    return <></>
+    return (
+        <>
+            <ul>
+                {cardData.map((card, index) => {
+                    return <li key={index}>{card.value}</li>
+                })}
+            </ul>
+        </>
+    )
 }
 
 export default App
