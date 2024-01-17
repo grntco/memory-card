@@ -1,6 +1,7 @@
 import './styles/App.css'
 import { shuffle } from './utils/shuffle'
 import { cardData } from './cardData'
+import Card from './components/Card'
 
 function App() {
     shuffle(cardData)
@@ -9,7 +10,7 @@ function App() {
         <>
             <ul>
                 {cardData.map((card, index) => {
-                    return <li key={index}>{card.value}</li>
+                    return <Card key={index} value={card.value}></Card>
                 })}
             </ul>
         </>
