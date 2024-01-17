@@ -1,0 +1,15 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-btn {
+    padding: 24px;
+    outline: none;
+    border: 1px solid black;
+}
+.card-btn:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}

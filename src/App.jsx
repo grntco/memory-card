@@ -7,13 +7,13 @@ function App() {
     shuffle(cardData)
 
     return (
-        <>
-            <ul>
+        <div className='app'>
+            <ul className='cards-container'>
                 {cardData.map((card, index) => {
                     return <Card key={index} value={card.value}></Card>
                 })}
             </ul>
-        </>
+        </div>
     )
 }
 
