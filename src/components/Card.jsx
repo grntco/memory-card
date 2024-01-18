@@ -1,9 +1,11 @@
 import '../styles/Card.css'
 
-export default function Card({ value }) {
+export function Card({ value, handleCardClick }) {
     return (
         <li className='card'>
-            <button className='card-btn'>{value}</button>
+            <button className='card-btn' onClick={handleCardClick}>
+                {value}
+            </button>
         </li>
     )
 }
