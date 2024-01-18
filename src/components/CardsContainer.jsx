@@ -1,10 +1,6 @@
-import { shuffle } from '../utils/shuffle'
-import { useState } from 'react'
-import { cardData } from '../cardData'
 import { Card } from './Card'
 
-export function CardsContainer() {
-    const [cards, setCards] = useState([...shuffle(cardData)])
+export function CardsContainer({ cards, handleCardClick }) {
 
     return (
         <ul className='cards-container'>
@@ -14,13 +10,10 @@ export function CardsContainer() {
                         key={index}
                         value={card.value}
                         handleCardClick={handleCardClick}
+                        index={index}
                     ></Card>
                 )
             })}
         </ul>
     )
-
-    function handleCardClick() {
-        setCards((prevCards) => [...shuffle(prevCards)])
-    }
 }
