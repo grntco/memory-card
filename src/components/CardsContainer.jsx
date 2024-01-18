@@ -1,16 +1,14 @@
 import { Card } from './Card'
 
-export function CardsContainer({ cards, handleCardClick }) {
-
+export function CardsContainer({ cards, handleClick }) {
     return (
         <ul className='cards-container'>
             {cards.map((card, index) => {
                 return (
                     <Card
                         key={index}
-                        value={card.value}
-                        handleCardClick={handleCardClick}
-                        index={index}
+                        card={card}
+                        handleClick={handleClick}
                     ></Card>
                 )
             })}

@@ -13,12 +13,11 @@ function App() {
     return (
         <div className='app'>
             <Scoreboard currentScore={currentScore}></Scoreboard>
-            <CardsContainer cards={cards} handleCardClick={handleCardClick} />
+            <CardsContainer cards={cards} handleClick={handleClick} />
         </div>
     )
 
-    function handleCardClick(index) {
-        let card = cards[index]
+    function handleClick(card) {
         if (card.clicked) {
             resetGame()
             console.log(cards)
