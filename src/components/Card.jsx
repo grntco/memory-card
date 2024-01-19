@@ -1,32 +1,51 @@
 import '../styles/Card.css'
+import { useState } from 'react'
 
 export function Card({ card, handleClick }) {
-    console.log(card.image)
+    const [mouseOver, setMouseOver] = useState(false)
+
     return (
         <li className='card'>
             <button
                 className='card-btn'
+                style={{ backgroundImage: `url(${card.image}` }}
                 onClick={() => {
                     handleClick(card)
                 }}
+                onMouseOver={() => {
+                    handleHover(true)
+                }}
+                onMouseLeave={() => {
+                    handleHover(false)
+                }}
             >
-                <div className='card-btn__image-container'>
-                    <img
-                        className='card-btn__image'
-                        src={card.image}
-                        alt={card.name}
-                    />
-                </div>
-                <div className="card-btn__primary-info-container">
-                    <h3 className='card-btn__name'>{card.name}</h3>
-                    <div className='card-btn__birth-year'>b. {card.yearOfBirth}</div>
-                </div>
-                <ul className="card-btn__secondary-info-container">
-                    <li>Ancestry: {card.ancestry}</li>
-                    <li>Hogwarts House: {card.house}</li>
-                    <li>Wand: {card.wand.wood}, {card.wand.core}</li>
-                </ul>
+                {mouseOver && (
+                    <div className='card-btn__info-container'>
+                        <div className='card-btn__primary-info'>
+                            <h3 className='card-btn__name'>{card.name}</h3>
+                            <div className='card-btn__birth-year'>
+                                (b. {card.yearOfBirth})
+                            </div>
+                        </div>
+                        <ul className='card-btn__secondary-info'>
+                            <li>
+                                <span>Hogwarts House:</span> {card.house}
+                            </li>
+                            <li>
+                                <span>Ancestry:</span> {card.ancestry}
+                            </li>
+                            <li>
+                                <span>Wand:</span> {card.wand.wood},{' '}
+                                {card.wand.core}
+                            </li>
+                        </ul>
+                    </div>
+                )}
             </button>
         </li>
     )
+
+    function handleHover(isMouseOver) {
+        setMouseOver(isMouseOver)
+    }
 }

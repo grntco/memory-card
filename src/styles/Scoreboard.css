@@ -3,4 +3,8 @@
     gap: 24px;
     padding: 24px;
     font-size: 1.8rem;
+    width: 100%;
+    justify-content: center;
+    background-color: rgba(106, 106, 106, 0.102);  
+    backdrop-filter: blur(20px);
 }
