@@ -1,6 +1,7 @@
 import '../styles/Card.css'
 
 export function Card({ card, handleClick }) {
+    console.log(card.image)
     return (
         <li className='card'>
             <button
@@ -10,6 +11,7 @@ export function Card({ card, handleClick }) {
                 }}
             >
                 {card.name}
+                {card.patronus}
             </button>
         </li>
     )

@@ -4,28 +4,33 @@ import { CardsContainer } from './CardsContainer'
 import { shuffle } from '../utils/shuffle'
 import { useState, useEffect } from 'react'
 import { cardData } from '../cardData'
+import { fetchCharacterData } from '../utils/fetchCharacterData'
 
 function App() {
     const [currentScore, setCurrentScore] = useState(0)
     const [highScore, setHighScore] = useState(0)
-    const [cards, setCards] = useState([...shuffle(cardData)])
+    const [cards, setCards] = useState([])
 
-    // useEffect(() => {
-    //     const baseUrl = 'https://api.potterdb.com/v1/characters'
-    //     const character = 'Harry Potter'
-    //     const fullUrl = `${baseUrl}?filter[name_cont]=${character}`
-    //     fetchCharacterData(fullUrl)
-    // }, [])
-
-    // async function fetchCharacterData(url) {
-    //     try {
-    //         const response = await fetch(url)
-    //         const json = await response.json()
-    //         return json
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
-    // }
+    useEffect(() => {
+        const updateCards = async () => {
+            const characterData = await fetchCharacterData()
+            setCards(() => {
+                return characterData.map((c) => {
+                    return {
+                        name: c.name,
+                        alive: c.alive,
+                        yearOfBirth: c.yearOfBirth,
+                        ancestry: c.ancestry,
+                        house: c.house,
+                        patronus: c.patronus,
+                        wand: c.wand,
+                        image: c.image,
+                    }
+                })
+            })
+        }
+        updateCards()
+    }, [])
 
     return (
         <div className='app'>
