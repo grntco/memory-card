@@ -5,13 +5,19 @@
 }
 
 .card-btn {
-    padding: 24px;
+    padding: 48px 24px;
+    border-radius: 8px;
     outline: none;
-    border: 1px solid black;
+    border: none;
     font-family: var(--font-family);
-    font-size: 1rem;
+    font-size: 1.2rem;
+    background-color: rgba(173, 173, 173, 0.15);
+    backdrop-filter: blur(5px);
+    opacity: 0.7;
+    transition: transform 0.01s;
 }
-.card-btn:hover{
+.card-btn:hover {
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 1;
+    transform: scale(1.1);
 }
