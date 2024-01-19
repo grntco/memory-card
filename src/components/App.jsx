@@ -3,7 +3,6 @@ import { Scoreboard } from './Scoreboard'
 import { CardsContainer } from './CardsContainer'
 import { shuffle } from '../utils/shuffle'
 import { useState, useEffect } from 'react'
-// import { cardData } from '../cardData'
 import { fetchCharacterData } from '../utils/fetchCharacterData'
 
 function App() {
