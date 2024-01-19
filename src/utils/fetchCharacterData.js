@@ -7,7 +7,7 @@ export async function fetchCharacterData() {
         const response = await fetch(url)
         const data = await response.json()
         // console.log(json)
-        return data.slice(0, 16)
+        return data.slice(0, 4)
     } catch (error) {
         console.error(error)
     }

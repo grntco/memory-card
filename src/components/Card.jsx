@@ -10,8 +10,22 @@ export function Card({ card, handleClick }) {
                     handleClick(card)
                 }}
             >
-                {card.name}
-                {card.patronus}
+                <div className='card-btn__image-container'>
+                    <img
+                        className='card-btn__image'
+                        src={card.image}
+                        alt={card.name}
+                    />
+                </div>
+                <div className="card-btn__primary-info-container">
+                    <h3 className='card-btn__name'>{card.name}</h3>
+                    <div className='card-btn__birth-year'>b. {card.yearOfBirth}</div>
+                </div>
+                <ul className="card-btn__secondary-info-container">
+                    <li>Ancestry: {card.ancestry}</li>
+                    <li>Hogwarts House: {card.house}</li>
+                    <li>Wand: {card.wand.wood}, {card.wand.core}</li>
+                </ul>
             </button>
         </li>
     )

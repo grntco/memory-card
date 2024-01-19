@@ -3,7 +3,7 @@ import { Scoreboard } from './Scoreboard'
 import { CardsContainer } from './CardsContainer'
 import { shuffle } from '../utils/shuffle'
 import { useState, useEffect } from 'react'
-import { cardData } from '../cardData'
+// import { cardData } from '../cardData'
 import { fetchCharacterData } from '../utils/fetchCharacterData'
 
 function App() {
@@ -18,13 +18,11 @@ function App() {
                 return characterData.map((c) => {
                     return {
                         name: c.name,
-                        alive: c.alive,
+                        image: c.image,
                         yearOfBirth: c.yearOfBirth,
                         ancestry: c.ancestry,
                         house: c.house,
-                        patronus: c.patronus,
                         wand: c.wand,
-                        image: c.image,
                     }
                 })
             })
