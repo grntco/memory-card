@@ -9,7 +9,7 @@ export function Card({ card, handleClick }) {
                     handleClick(card)
                 }}
             >
-                {card.value}
+                {card.name}
             </button>
         </li>
     )

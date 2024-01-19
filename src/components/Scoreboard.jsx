@@ -1,3 +1,5 @@
+import '../styles/Scoreboard'
+
 export function Scoreboard({ currentScore, highScore }) {
     return (
         <div className='scoreboard'>

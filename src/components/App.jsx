@@ -10,22 +10,22 @@ function App() {
     const [highScore, setHighScore] = useState(0)
     const [cards, setCards] = useState([...shuffle(cardData)])
 
-    useEffect(() => {
-        const baseUrl = 'https://api.potterdb.com/v1/characters'
-        const character = 'Harry Potter'
-        const fullUrl = `${baseUrl}?filter[name_cont]=${character}`
-        fetchCharacterData(fullUrl)
-    }, [])
+    // useEffect(() => {
+    //     const baseUrl = 'https://api.potterdb.com/v1/characters'
+    //     const character = 'Harry Potter'
+    //     const fullUrl = `${baseUrl}?filter[name_cont]=${character}`
+    //     fetchCharacterData(fullUrl)
+    // }, [])
 
-    async function fetchCharacterData(url) {
-        try {
-            const response = await fetch(url)
-            const json = await response.json()
-            return json
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    // async function fetchCharacterData(url) {
+    //     try {
+    //         const response = await fetch(url)
+    //         const json = await response.json()
+    //         return json
+    //     } catch (error) {
+    //         console.error(error)
+    //     }
+    // }
 
     return (
         <div className='app'>
