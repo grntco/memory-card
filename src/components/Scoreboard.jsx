@@ -1,4 +1,4 @@
-import '../styles/Scoreboard'
+import '../styles/Scoreboard.css'
 
 export function Scoreboard({ currentScore, highScore }) {
     return (

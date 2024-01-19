@@ -8,6 +8,8 @@
     padding: 24px;
     outline: none;
     border: 1px solid black;
+    font-family: var(--font-family);
+    font-size: 1rem;
 }
 .card-btn:hover{
     cursor: pointer;

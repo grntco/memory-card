@@ -4,6 +4,8 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    --font-family: 'Alegreya', serif;
 }
 
 * {
@@ -14,5 +16,7 @@
 
 body {
     height: 100vh;
+    font-family: var(--font-family);
+
     background-color: #000;
 }
