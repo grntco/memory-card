@@ -2,6 +2,7 @@ import '../styles/App.css'
 import { Scoreboard } from './Scoreboard'
 import { CardsContainer } from './CardsContainer'
 import { shuffle } from '../utils/shuffle'
+import { deal } from '../utils/deal'
 import { useState, useEffect } from 'react'
 import { fetchCharacterData } from '../utils/fetchCharacterData'
 
@@ -9,24 +10,25 @@ function App() {
     const [currentScore, setCurrentScore] = useState(0)
     const [highScore, setHighScore] = useState(0)
     const [cards, setCards] = useState([])
+    const dealtCards = deal(shuffle(cards), 8)
 
     useEffect(() => {
-        const updateCards = async () => {
+        ;(async () => {
             const characterData = await fetchCharacterData()
             setCards(() => {
-                return characterData.map((c) => {
+                return characterData.map((character) => {
                     return {
-                        name: c.name,
-                        image: c.image,
-                        yearOfBirth: c.yearOfBirth,
-                        ancestry: c.ancestry,
-                        house: c.house,
-                        wand: c.wand,
+                        name: character.name,
+                        image: character.image,
+                        yearOfBirth: character.yearOfBirth,
+                        ancestry: character.ancestry,
+                        house: character.house,
+                        wand: character.wand,
+                        clicked: false,
                     }
                 })
             })
-        }
-        updateCards()
+        })()
     }, [])
 
     return (
@@ -35,7 +37,7 @@ function App() {
                 currentScore={currentScore}
                 highScore={highScore}
             ></Scoreboard>
-            <CardsContainer cards={cards} handleClick={handleClick} />
+            <CardsContainer cards={dealtCards} handleClick={handleClick} />
         </div>
     )
 
@@ -62,7 +64,7 @@ function App() {
     function moveToNextPlay(card) {
         card.clicked = true
         setCurrentScore((prevCurrentScore) => prevCurrentScore + 1)
-        setCards((prevCards) => [...shuffle(prevCards)])
+        // setCards((prevCards) => [...shuffle(prevCards)])
     }
 }
 

@@ -4,7 +4,7 @@ export async function fetchCharacterData() {
             'https://hp-api.onrender.com/api/characters',
         )
         const data = await response.json()
-        return data.slice(0, 4)
+        return data.slice(0, 16)
     } catch (error) {
         console.error(error)
     }
