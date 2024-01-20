@@ -31,13 +31,20 @@ export function Card({ card, handleClick }) {
                             <li>
                                 <span>Hogwarts House:</span> {card.house}
                             </li>
-                            <li>
-                                <span>Ancestry:</span> {card.ancestry}
-                            </li>
-                            <li>
-                                <span>Wand:</span> {card.wand.wood},{' '}
-                                {card.wand.core}
-                            </li>
+                            {card.ancestry && (
+                                <li>
+                                    <span>Ancestry:</span> {card.ancestry}
+                                </li>
+                            )}
+                            {(card.wand.wood || card.wand.core) && (
+                                <li>
+                                    <span>Wand:</span> {card.wand.wood ?? ''}
+                                    {card.wand.wood && card.wand.core
+                                        ? ', '
+                                        : ''}
+                                    {card.wand.core ?? ''}
+                                </li>
+                            )}
                         </ul>
                     </div>
                 )}
