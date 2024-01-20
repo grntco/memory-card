@@ -14,7 +14,7 @@ function App() {
 
     useEffect(() => {
         ;(async () => {
-            const characterData = await fetchCharacterData()
+            const characterData = await fetchCharacterData(16)
             setCards(() => {
                 return characterData.map((character) => {
                     return {
