@@ -17,6 +17,6 @@
 body {
     height: 100vh;
     font-family: var(--font-family);
-
     background-color: #000;
+    color: #edecea;
 }

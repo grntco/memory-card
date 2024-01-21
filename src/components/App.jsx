@@ -11,6 +11,8 @@ function App() {
     const [highScore, setHighScore] = useState(0)
     const [cards, setCards] = useState([])
     const dealtCards = deal(shuffle(cards), 8)
+    // Can this check for ones that have not been clicked?
+    // It needs to add at least one card that has not been clicked to the dealtCard array. cards.some(card => card.clicked === true)
 
     useEffect(() => {
         ;(async () => {
