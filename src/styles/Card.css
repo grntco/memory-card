@@ -39,7 +39,7 @@
     justify-content: end;
     padding: 8px;
     border-radius: 0px 0px 6px 6px;
-    background-color: rgba(114, 102, 85, 0.8);
+    background-color: rgba(33, 45, 42, 0.8);
     backdrop-filter: blur(8px);
     pointer-events: none;
 }
@@ -50,7 +50,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: left;
-    border-bottom: 1px solid rgba(114, 102, 85, 1);
+    border-bottom: 1px solid rgb(164, 156, 145);
 }
 
 .card-btn__birth-year {
@@ -58,6 +58,7 @@
 }
 
 .card-btn__secondary-info {
+    margin-top: 4px;
     width: 100%;
     list-style: none;
     display: flex;
