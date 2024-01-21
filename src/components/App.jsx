@@ -36,9 +36,10 @@ function App() {
     return (
         <div className='app'>
             <Scoreboard
+                cards={cards}
                 currentScore={currentScore}
                 highScore={highScore}
-            ></Scoreboard>
+            />
             <CardsContainer cards={dealtCards} handleClick={handleClick} />
         </div>
     )
