@@ -10,9 +10,7 @@ function App() {
     const [currentScore, setCurrentScore] = useState(0)
     const [highScore, setHighScore] = useState(0)
     const [cards, setCards] = useState([])
-    const dealtCards = deal(shuffle(cards), 8)
-    // Can this check for ones that have not been clicked?
-    // It needs to add at least one card that has not been clicked to the dealtCard array. cards.some(card => card.clicked === true)
+    const [dealtCards, setDealtCards] = useState([])
 
     useEffect(() => {
         ;(async () => {
@@ -33,6 +31,12 @@ function App() {
         })()
     }, [])
 
+    useEffect(() => {
+        if (cards.length > 0) {
+            setDealtCards([...deal(8, shuffle(cards))])
+        }
+    }, [cards])
+
     return (
         <div className='app'>
             <Scoreboard
@@ -48,6 +52,7 @@ function App() {
         if (card.clicked) {
             resetGame()
         } else {
+            console.log(card)
             moveToNextPlay(card)
         }
     }
@@ -67,7 +72,7 @@ function App() {
     function moveToNextPlay(card) {
         card.clicked = true
         setCurrentScore((prevCurrentScore) => prevCurrentScore + 1)
-        // setCards((prevCards) => [...shuffle(prevCards)])
+        setCards((prevCards) => [...shuffle(prevCards)])
     }
 }
 
