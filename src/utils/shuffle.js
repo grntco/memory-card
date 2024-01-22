@@ -1,12 +1,12 @@
-export function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+export function shuffle(deck) {
+    for (let i = deck.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1))
-        let temp = array[j]
-        array[j] = array[i]
-        array[i] = temp
+        let temp = deck[j]
+        deck[j] = deck[i]
+        deck[i] = temp
     }
 
-    return array
+    return deck
 }
 
 
