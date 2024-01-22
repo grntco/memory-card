@@ -7,7 +7,6 @@
 
 .card:hover {
     cursor: pointer;
-
 }
 
 .card-btn {
@@ -34,9 +33,10 @@
 
 .card-btn__info-container {
     width: 100%;
+    min-height: 35%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    /* justify-content: ; */
     padding: 8px;
     border-radius: 0px 0px 6px 6px;
     background-color: rgba(33, 45, 42, 0.8);
@@ -53,7 +53,7 @@
     border-bottom: 1px solid #a49c91;
 }
 
-.card-btn__birth-year {
+.card-btn__primary-info .card-btn__birth-year {
     font-style: italic;
 }
 
