@@ -11,6 +11,7 @@ function App() {
     const [highScore, setHighScore] = useState(0)
     const [cards, setCards] = useState([])
     const [dealtCards, setDealtCards] = useState([])
+    const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {
         ;(async () => {
@@ -37,6 +38,12 @@ function App() {
         }
     }, [cards])
 
+    useEffect(() => {
+        setTimeout(() => {
+            setLoaded(true)
+        }, 1000)
+    }, [])
+
     return (
         <div className='app'>
             <Scoreboard
@@ -44,7 +51,7 @@ function App() {
                 currentScore={currentScore}
                 highScore={highScore}
             />
-            <CardsContainer cards={dealtCards} handleClick={handleClick} />
+            {loaded && <CardsContainer cards={dealtCards} handleClick={handleClick} />}
         </div>
     )
 
