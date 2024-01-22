@@ -20,7 +20,7 @@
     border: none;
     font-family: var(--font-family);
     font-size: 1rem;
-    background-position: center;
+    background-position: top;
     background-size: cover;
     color: #fff;
     opacity: 0.8;
