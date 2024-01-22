@@ -51,7 +51,9 @@ function App() {
                 currentScore={currentScore}
                 highScore={highScore}
             />
-            {loaded && <CardsContainer cards={dealtCards} handleClick={handleClick} />}
+            {loaded && (
+                <CardsContainer cards={dealtCards} handleClick={handleClick} />
+            )}
         </div>
     )
 
@@ -59,7 +61,6 @@ function App() {
         if (card.clicked) {
             resetGame()
         } else {
-            console.log(card)
             moveToNextPlay(card)
         }
     }
