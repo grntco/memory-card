@@ -5,6 +5,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     --font-family: 'Alegreya', serif;
+    --font-color: rgb(237, 236, 234);
+    --primary-bg-color: rgb(62, 53, 63);
+    --secondary-bg-color: rgba(33, 45, 42, 0.8);
+    --border-color: rgb(164, 156, 145);
 }
 
 * {
@@ -15,6 +19,6 @@
 
 body {
     font-family: var(--font-family);
-    background-color: #000;
-    color: #edecea;
+    background-color: var(--primary-bg-color);
+    color: var(--font-color);
 }
