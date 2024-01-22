@@ -1,0 +1,19 @@
+.cards-container {
+    width: min(100%, 1110px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
+    padding: 24px;
+    border-radius: 10px;
+    gap: 24px;
+    list-style: none;
+    animation: grow 0.25s ease-out;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0.01);
+    }
+    to {
+        transform: scale(1);
+    }
+}

@@ -8,13 +8,3 @@
     background-size: cover;
     background-position: center;
 }
-
-.cards-container {
-    width: min(100%, 1110px);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
-    padding: 24px;
-    border-radius: 10px;
-    gap: 24px;
-    list-style: none;
-}

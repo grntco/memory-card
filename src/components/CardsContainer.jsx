@@ -1,4 +1,5 @@
 import { Card } from './Card'
+import '../styles/CardsContainer.css'
 
 export function CardsContainer({ cards, handleClick }) {
     if (cards.length > 0) {
